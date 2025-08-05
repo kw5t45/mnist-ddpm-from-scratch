@@ -13,7 +13,7 @@ The standard DDPM approach is followed based on the original DDPM paper (cite). 
 <br>  
 For the sampling process, we start with a random 32x32 image generated with Gaussian noise at timestep t=1000, and we reverse the noising process using the trained network.
 
-![image](resources\Fig_0.png)
+![image](resources/Fig_0.png)
 
 More specifically:
  We start with te dataset, scale it and convert it into a tensor with size $$[batch_size, 1, 32, 32]$$. We use 1000 timesteps and values in the range $$0.0001 < β < 0.2$$. We also save the $$α$$ values calculated as $$1 - β$$, and the cummulative product of $$α$$ which we will use later. For the training, a learning rate of 0.0001 is used, and the models trains over 100 epochs. For each noising step we use this formula:
@@ -34,8 +34,8 @@ And with many derivations we eventually have
 $$\mathcal{L}_{\text{simple}} = \mathbb{E}_{x_0, \epsilon, t} \left[ \left\| \epsilon - \epsilon_\theta(x_t, t) \right\|^2 \right]$$
 As our loss function, where epsilon is the noise added and epsilon-theta is the predicted noise added. The full derivation can be found in (cite).
 Here are some sampling examples:
-![image](resources\Fig_2.png)
-![image](resources\Fig_3.png)
+![image](resources/Fig_2.png)
+![image](resources/Fig_3.png)
 We can also see the denoising process for each 100 timesteps. Notice
 that both outputs are the digit 1. This is because in training we only used
 the first 1000 out of 60000 images and for only 5 epochs. Running 100 epochs
