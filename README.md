@@ -7,7 +7,7 @@ The libraries used are:
 - DeepInv for the DiffUNET CNN
 
 
-![image](resources\Fig_1.png)
+![image](resources/Fig_1.png)
 
 The standard DDPM approach is followed based on the original DDPM paper (cite). The core idea is that for each image we add Gaussian noise over 1000 timesteps, while we train a UNET type Convolutional Neural Network to denoise the new image. The metric - loss function used in the training process is a simple MSE difference, which is derived from the KL divergence of the real noise added and the model predicted noise. 
 <br>  
